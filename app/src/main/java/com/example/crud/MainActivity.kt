@@ -5,7 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
+
+import java.io.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,8 +19,32 @@ class MainActivity : AppCompatActivity() {
 
         var errores:Int = 0
 
+        var usuarios:String = ""
+
+        usuarios = readFile()
+
         btnAcpt.setOnClickListener{
-            val enviar = Intent(this, MenuInicial::class.java)
+            if (usuarios.length==0){
+
+            }else {
+                val enviar = Intent(this, Menu::class.java)
+                startActivity(enviar)
+            }
         }
     }
+}
+
+fun readFile (): String {
+    var cadena:String = ""
+    try{
+        var fin=FileReader("db.txt")
+        var c:Int?
+        do{
+            c=fin.read()
+            print(c.toChar())
+            cadena = cadena +","+ c.toString()
+        }while (c!=-1)
+    }catch (ex:Exception){
+    }
+    return cadena
 }
