@@ -11,6 +11,18 @@
         android:theme="@style/Theme.CRUD">
         <activity
             android:name=".Menu"
+            android:exported="true" />}
+        <activity
+            android:name=".Create"
+            android:exported="true" />
+        <activity
+            android:name=".Delete"
+            android:exported="true" />
+        <activity
+            android:name=".Read"
+            android:exported="true" />
+        <activity
+            android:name=".Update"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
