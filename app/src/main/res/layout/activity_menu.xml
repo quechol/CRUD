@@ -139,6 +139,16 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/radioCRUD" />
 
+                    <!--<TextView
+                        android:id="@+id/textViewInfo"
+                        android:layout_width="146dp"
+                        android:layout_height="184dp"
+                        android:layout_marginBottom="24dp"
+                        android:text="TextView"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />-->
+
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,13 +17,17 @@ class Menu : AppCompatActivity(){
         val rbU:RadioButton = findViewById(R.id.rbtnUpdate)
         val rbD:RadioButton = findViewById(R.id.rbtnDelete)
         val btnAceptar:Button = findViewById(R.id.buttonSel)
+        //val auxTxt:TextView = findViewById(R.id.textViewInfo)
         //variables
         //var zoo: MutableList<Animal> = mutableListOf()
         var zoo: ArrayList<Animal> = ArrayList()
+        var numbers: ArrayList<String> = ArrayList()
+        var hola: String = "Hola"
         //animales
         val aguila = Animal("EJEMPLO \n", "Habitad: \n", "Dieta: \n", "Promedio de vida: \n")
         //agregar a la lista
         zoo.add(aguila)
+        numbers.add("UNO")
         //programa
         btnAceptar.setOnClickListener {
             val opc: Int = rgCRUD.checkedRadioButtonId
@@ -35,7 +39,7 @@ class Menu : AppCompatActivity(){
                     rbC.id -> {
                         i=0
                         val crear = Intent(this, Create::class.java)
-                        crear.putExtra("Datos", zoo)
+                        crear.putExtra("Datos", numbers)
                         //intent.putParcelableArrayListExtra("Datos", ArrayList(zoo))
                         startActivity(crear)
                     }
@@ -57,12 +61,6 @@ class Menu : AppCompatActivity(){
                 }
             }
         }
+        //auxTxt.text = zoo.toString()
     }
 }
-
-data class Animal(
-    val nombre: String,
-    val habitat: String,
-    val alimentacion:String,
-    val vida: String,
-)
